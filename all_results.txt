@@ -1,11 +1,12 @@
+les résultats ci-dessous ont été obtenu uniquement avec les données du TP
+
+SANS PRE-TRAITEMENT
 avec moses.ini + model 3-gram sur news-commentary
 BLEU = 14.43, 43.7/18.4/9.8/5.5 (BP=1.000, ratio=1.160, hyp_len=2470, ref_len=2129)
 avec moses_opt.ini + 3-gram sur news-commentary
 BLEU = 14.23, 43.3/18.2/9.6/5.4 (BP=1.000, ratio=1.171, hyp_len=2492, ref_len=2129)
 avec moses.ini + 4-gram sur news-commentary
 BLEU = 13.57, 43.9/17.8/9.1/4.8 (BP=1.000, ratio=1.158, hyp_len=2466, ref_len=2129)
-avec moses_opt.ini + 4-gram sur news-commentary
-ERROR
 
 
 AVEC PRE-TRAITEMENT
@@ -15,17 +16,17 @@ avec moses_opt.ini + 3-gram sur news-commentary
 BLEU = 15.08, 44.1/19.1/10.3/6.0 (BP=1.000, ratio=1.194, hyp_len=1736, ref_len=1454)
 avec moses.ini + 4-gram sur news-commentary
 BLEU = 13.56, 44.1/17.8/9.0/4.8 (BP=1.000, ratio=1.173, hyp_len=1706, ref_len=1454)
-avec moses_opt.ini + 4-gram sur news-commentary
-ERROR
 
 
-PRE-TRAITEMENT + NOUVEAU POIDS
-avec moses.ini + model 3-gram sur news-commentary
-BLEU = 15.15, 44.7/18.9/10.3/6.1 (BP=1.000, ratio=1.178, hyp_len=1713, ref_len=1454)
-avec moses_opt.ini + 3-gram sur news-commentary
-BLEU = 15.08, 44.1/19.1/10.3/6.0 (BP=1.000, ratio=1.194, hyp_len=1736, ref_len=1454)
-avec moses.ini + 4-gram sur news-commentary
-BLEU = 13.56, 44.1/17.8/9.0/4.8 (BP=1.000, ratio=1.173, hyp_len=1706, ref_len=1454)
-avec moses_opt.ini + 4-gram sur news-commentary
-BLEU = 13.27, 43.4/17.6/8.8/4.6 (BP=1.000, ratio=1.184, hyp_len=1722, ref_len=1454)
+                           TABLEAU RECAPITULATIF
+ ------------------------------------------------------------------------
+|                            | SANS PRE-TRAITEMENT | AVEC PRE-TRAITEMENT |
+ ------------------------------------------------------------------------
+| moses.ini     + 3-gram     |        14.43        |        15.15        |
+| moses_opt.ini + 3-gram     |        14.23        |        15.08        |
+| moses.ini     + 4-gram     |        13.57        |        13.56        |
+ ------------------------------------------------------------------------
 
+
+ On remarque que le pré-traitement des corpus améliore légerement les résultats
+ en regroupant les mots identiques mais dont certains étaient capitalisés.
