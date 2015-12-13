@@ -1,0 +1,65 @@
+# WORKING DIRECTORY
+In your working directory you can find files named "moses.ini" and 
+"moses_opt.ini". You will have the modify those file if you want to use a
+pre-computed language model or if you want to change some weights
+
+
+# DATA
+In order to make scripts easier to use, you have to put your data files (corpus)
+in data/ in your working directory, renaming the "train.fr" and "train.en".
+
+
+# SCRIPTS
+
+- setup_dir.sh: setup a new working directory
+   . options:
+      o dirname: the name of the directory to make
+
+/!\ You have to change the variable "paths" in the scripts to tell the absolute 
+path of the directory containing moses, giza and srilm /!\
+- preprocess.sh: do some preprocesses on datas.
+   . options:
+      o dirname: the name of the working dir where to find datas
+
+/!\ You have to change the variable "paths" in the scripts to tell the absolute 
+path of the directory containing moses, giza and srilm /!\
+- filter_model.sh: filter the model
+   . options:
+      o dirname: the name of the working dir where to find datas
+      o data1: one of the data file, preprocessed or not
+      o data2: the other data file, preprocessed or not
+
+
+/!\ You have to change the variable "paths" in the scripts to tell the absolute
+path of the directory containing moses, giza and srilm /!\
+/!\ You have to change the variable "path2" in the scripts to tell the absolute
+path of the directory containing your working directory /!\
+- decode.sh: decode the filtered model
+   . options:
+      o dirname: the name of the working directory
+      o mosesini: the name of the moses.ini to use
+      o data: the data file you want to use to decode the model
+
+/!\ You have to change the variable "paths" in the scripts to tell the absolute
+path of the directory containing moses, giza and srilm /!\
+- make_lm.sh: construct a language model
+   . options:
+      o dirname: the name of the working directory
+      o lang: the language of the data to use (ex: fr)
+
+/!\ You have to change the variable "paths" in the scripts to tell the absolute
+path of the directory containing moses, giza and srilm /!\
+- trad.sh: construct the translation table.
+   . options:
+      o dirname: the name of the working directory
+      o slang: the source language (ex: fr)
+      o tlang: the target language (ex: en)
+
+/!\ You have to change the variable "path2" in the scripts to tell the absolute
+path of the directory containing "multi-bleu.perl"/!\
+- eval_res.sh: evaluate the quality of the translation
+   . options:
+      o dirname: the name of the working directory
+      o file: the file to give to multi-bleu.perl
+
+
